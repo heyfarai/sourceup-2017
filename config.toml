@@ -1,0 +1,8 @@
+baseurl = "http://2016.pixelup.co.za/"
+languageCode = "en-us"
+publishdir = "__build"
+title = "Pixel Up!"
+theme = "pixelup-2016"
+[Params]
+  Author = "Pixel Up!"
+  GoogleAnalyticsUserID = "UA-72813434-1"

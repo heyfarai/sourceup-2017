@@ -1,0 +1,40 @@
+
+  {{ partial "default_head.html" . }}
+            <div class="section-layout--sloping-bottom-left hero typeset">
+                <div class="hero__layout container">
+                    {{ range first 1 .Data.Pages }}
+                        {{ $author := .Params.author }}
+                        {{ $authorSlug :=  $author | urlize  }}
+                    <a href="/blog/{{ .Slug }}">
+                        <h1 class="hero__header post-hero">
+                            <small>PIXEL UP! Blog </small><br/>
+                            {{ .Title }}
+                        </h1>
+                        <div class="author-content">
+        					<img alt="" src="/{{ $authorSlug }}" srcset="/img/people/{{ $authorSlug }}.jpg" class="avatar avatar--round avatar--small avatar--gray photo" height="234" width="234" originals="234" scale="2">
+                            <p class="caption">by <span itemprop="author">{{ $author }}</span> </p>
+                        </div>
+                    </a>
+                    {{ end}}
+                </div>
+            </div>
+    		<div class="content-wrapper">
+                <div class="section-layout section-layout--left">
+                    <section class="section typeset container">
+						{{ if .Data.Pages }}
+							<div class="blog blog-article-list">
+								{% for post in data.posts %}
+                                    {% if not loop.first %}
+                                    page
+                                    {% endif %}
+                                {% endfor %}
+							</div>
+						{{ else }}
+							<h3 class="caption caption--centered">No posts in this category yet.</h3>
+						{{ end }}
+                    </section>
+                </div>
+    		</div>
+
+
+  {{ partial "default_foot.html" . }}
