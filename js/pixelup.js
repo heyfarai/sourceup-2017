@@ -1,4 +1,12 @@
 $( document ).ready(function() {
+
+    $grid = $('.speaker-grid');
+
+    var masonryOptions = {         // initial masonry options
+      itemSelector: '.grid__item',
+      transitionSpeed: 50,
+    }
+    $grid.masonry(masonryOptions);
     eraseCookie("onList");
     $("#news-signup-form__submit").attr('disabled','disabled')
 
